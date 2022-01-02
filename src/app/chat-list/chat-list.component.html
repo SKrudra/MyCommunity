@@ -1,1 +1,16 @@
-<p>chat-list works!</p>
+<div class="card">
+    <div class="card-header">
+        Select user to chat with
+        <button aria-label="Close" class="close" type="button" (click)="close()">
+            <clr-icon aria-hidden="true" shape="close"></clr-icon>
+        </button>
+    </div>
+    <div class="card-block">
+        <div class="card-text">
+            <clr-tree-node *ngFor="let user of users" (click)="talkTo = user"><span [clas.active]="talkTo == user" class="clr-treenodes-link">{{user}}</span></clr-tree-node>
+        </div>
+    </div>
+    <div class="card-footer">
+        <a class="btn btn-sm btn-link btn-primary" *ngIf="talkTo" [routerLink]="[talkTo]">Start chat with {{talkTo}}</a>
+    </div>
+</div>
