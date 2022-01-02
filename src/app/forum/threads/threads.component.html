@@ -1,1 +1,18 @@
-<p>threads works!</p>
+<div class="content-container">
+    <div class="content-area">
+        <table class="table" *ngIf="threads">
+            <tr>
+                <td>Thread</td>
+                <td>User</td>
+                <td>Last</td>
+                <td>Posts</td>
+            </tr>
+            <tr *ngFor="let thread of threads" [routerLink]="[thread.alias]">
+                <td>{{thread.title}}</td>
+                <td>{{thread.posts[0].username}}</td>
+                <td>{{thread.posts[0].timestamp | date:'medium'}}</td>
+                <td>{{thread.posts.length}}</td>
+            </tr>
+        </table>
+    </div>
+</div>

@@ -1,3 +1,5 @@
+import { ForumsService } from './../../forums/services/forums.service';
+import { Forum } from './../services/data';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ForumsComponent implements OnInit {
 
-  constructor() { }
+  forums!: Forum[];
+
+  constructor(private forumsService: ForumsService) { }
 
   ngOnInit(): void {
+    this.forums = this.forumsService.forums;
   }
 
 }
