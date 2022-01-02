@@ -20,7 +20,7 @@ export class BlogComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.post_id = Number.parseInt(params['post_id']);
       this.post = this.blogsService.post(this.post_id);
-      this.lines = this.post.content.split('\n').filter(line => line.length);
+      this.lines = this.post.content.split('\n').filter((line: string) => line.length);
       this.canPrev = (this.post_id > 1);
       this.canNext = (this.post_id < (this.blogsService.posts.length));
     });
