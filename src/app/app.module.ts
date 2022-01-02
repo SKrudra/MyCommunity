@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ChatComponent } from './chat/chat.component';
 import { ChatListComponent } from './chat-list/chat-list.component';
 import { LoginComponent } from './login/login.component';
+import { ClarityModule, ClrIconModule } from '@clr/angular';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,9 @@ import { LoginComponent } from './login/login.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ClarityModule,
+    ClrIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,3 +1,5 @@
+import { Post } from './../services/data';
+import { BlogsService } from './../services/blogs.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogsComponent implements OnInit {
 
-  constructor() { }
+  posts!: Post[];
+
+  constructor(private blogsService: BlogsService) { }
 
   ngOnInit(): void {
+    this.posts = this.blogsService.posts;
   }
 
 }
