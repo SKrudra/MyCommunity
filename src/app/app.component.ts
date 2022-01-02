@@ -15,7 +15,7 @@ export class AppComponent {
   title = 'MyCommunity';
   loggedIn: boolean = false;
   
-  constructor(private userService: UserService) {}
+  constructor(public userService: UserService) {}
 
   logout() {
     this.userService.logout();

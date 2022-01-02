@@ -1,12 +1,34 @@
+import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
+
+let username = localStorage.getItem('username') || '';
+let guest = (username) ? false : true;
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  logout() {
-    throw new Error('Method not implemented.');
+  
+  constructor(private router: Router) { }
+  
+  isGuest() {
+    return guest;
   }
 
-  constructor() { }
+  getUser() {
+    return username;
+  }
+
+  login(newUsername: string) {
+    username = newUsername;
+    guest = false;
+    localStorage.setItem('username', username);
+  }
+
+  logout() {
+    username = '';
+    guest = true;
+    localStorage.setItem('username', '');
+    this.router.navigate([{outlets: {chat: null}}]);
+  }
 }

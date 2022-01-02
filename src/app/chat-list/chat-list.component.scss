@@ -10,9 +10,9 @@
     overflow: hidden;
     overflow-y: scroll;
   }
-  /deep/ .clr-treenode-content {
+  :host .clr-treenode-content {
     padding-left: 0;
   }
-  /deep/ .clr-treenode-content:hover {
+  :host .clr-treenode-content:hover {
     cursor: pointer;
   }
